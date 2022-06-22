@@ -3,35 +3,35 @@
         {
             "id": 1,
             "title": "European Quest",
-            "imageSrc": "",
+            "imageSrc": "https://cdn.pixabay.com/photo/2022/06/20/05/36/landscape-7273091_960_720.jpg",
             "numberOfCountries": 11,
             "numberOfDays": 25,
             "rate": 4.6,
-            "currency": "",
+            "currency": "€",
             "minPrice": 2877,
-            "oldPrice": 3385
+            "minPriceOld": 3385
         },
         {
             "id": 2,
             "title": "Simply Italy",
-            "imageSrc": "",
+            "imageSrc": "https://cdn.pixabay.com/photo/2022/06/15/18/38/castle-7264439_960_720.jpg",
             "numberOfCountries": 2,
             "numberOfDays": 15,
             "averageRate": 4.4,
-            "currency": "",
+            "currency": "€",
             "minPrice": 1832,
-            "oldPrice": 2155
+            "minPriceOld": 2155
         },
         {
             "id": 3,
             "title": "Italian Espresso",
-            "imageSrc": "",
+            "imageSrc": "https://cdn.pixabay.com/photo/2022/06/18/21/40/strasbourg-7270721_960_720.jpg",
             "numberOfCountries": 1,
             "numberOfDays": 10,
             "rate": 4.5,
-            "currency": "",
+            "currency": "€",
             "minPrice": 1245,
-            "oldPrice": 1465
+            "minPriceOld": 1465
         }
     ]
 }

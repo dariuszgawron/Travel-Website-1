@@ -1,10 +1,18 @@
 import React from 'react';
+import Trip from './Trip';
 
-const Trips = () => {
+const Trips = ({trips}) => {
     return (
-        <div>
-            Trips
-        </div>
+        <section className='section trip'>
+            <h2 className='section__title'>
+                Recently viewed trips
+            </h2>
+            <div className='trip__container'>
+                {trips.map(trip => {
+                    return <Trip key={trip.id} {...trip} />
+                })}
+            </div>
+        </section>
     )
 };
 
