@@ -1,9 +1,9 @@
-// import logo from './logo.svg';
-// import './App.css';
 import React, { useEffect, useState } from 'react';
+import {io} from 'socket.io-client';
 import Trips from './Trips';
+import './App.css';
 
-const tripsUrl = 'http://localhost:5000/trips';
+const socket = io('ws://localhost:5000');
 
 function App() {
   const [trips,setTrips] = useState([]);
@@ -12,10 +12,11 @@ function App() {
   const fetchTrips = async () => {
     try {
       setLoading(true);
-      const response = await fetch(tripsUrl);
-      const tripsData = await response.json();
-      setTrips(tripsData);
-      console.log(trips.length);
+      await new Promise(resolve => {
+        socket.on('trips', (data)=>{
+          resolve(setTrips(data.trips));
+        })
+      });
       setLoading(false);
     } catch(err) {
       setLoading(false);
@@ -26,30 +27,21 @@ function App() {
     fetchTrips();
   }, []);
 
-  // useEffect(() => {
-  //   const socket = new WebSocket('wss://localhost:5000/trips');
-  //   socket.addEventListener('message', ({ data }) => {
-  //     const parsed = JSON.parse(data);
-  //     // setNewRequest(parsed.vc_request);
-  //   });
-  //   return () => socket.close();
-  // }, []);
-
   if(loading)  
     return (
-      <main>
+      <main className='main'>
         Loading...
       </main>
     )
   else if(!trips.length) 
     return (
-      <main>
+      <main className='main'>
         No data
       </main>
     )
   else
     return (
-      <main>
+      <main className='main'>
         <Trips trips={trips} />
       </main>
     )

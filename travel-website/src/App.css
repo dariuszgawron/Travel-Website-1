@@ -1,3 +1,142 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/* GLOBAL VARIABLES */
+:root {
+  /* FONTS */
+  --font-family: 'Roboto',sans-serif;
+  --font-size-1: 2rem;
+  --font-size-2: 1.5rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.12rem;
+  --font-size-5: 1rem;
+  --font-size-6: .875rem;
+  /* --font-size-7: .75rem; */
+  --font-size-7: .6rem;
+
+  --font-weight-bold: 900;
+  --font-weight-semibold: 700;
+  --font-weight-medium: 500;
+}
+
+/* GENERAL STYLES & RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-5);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* COMMON CSS CLASSES */
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.section {
+  padding: 2rem 0 1rem;
+}
+
+.section__title {
+  position: relative;
+  margin-bottom: 2.5rem;
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-bold);
+}
+
+.section__title--center {
+  text-align: center;
+}
+
+/* TRIPS */
+.trips {
+
+}
+
+.trips__container {
+  display: grid;
+  grid-gap: .8rem;
+}
+
+.trips__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: .5rem;
+  border: 1px solid rgb(239, 239, 239)
+}
+
+.trips__cover {
+  overflow: hidden;
+}
+
+.trips_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: .4s;
+}
+
+.trips__data {
+  padding: .6rem;
+}
+
+.trips__subtitle {
+  font-size: var(--font-size-7);
+  color: rgb(144, 144, 144);
+}
+
+.trips__title {
+  margin-bottom: .6rem;
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-bold);
+}
+
+
+
+/* MEDIA QUERIES */
+/* Small screen */
+
+
+/* Medium screen */
+@media screen and (min-width: 767px) {
+  .trips__container {
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .trips__container {
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+/* Large screen */
+
+
+
+/*  */
 .App {
   text-align: center;
 }
