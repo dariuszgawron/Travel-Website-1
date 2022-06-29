@@ -1,5 +1,20 @@
 import React from 'react';
 
+const generateStars = (maxRate,rate) => {
+    let starsRate = [];
+    for(let i=1;i<=maxRate;i++) {
+        let difference = i-rate;
+        if(difference<0.5) {
+            starsRate.push(<i className="trips-rate__icon fa-solid fa-star"></i>);
+        } else if (difference>=0.5 && difference<1) {
+            starsRate.push(<i className="trips-rate__icon fa-regular fa-star-half-stroke"></i>);
+        } else {
+            starsRate.push(<i className="trips-rate__icon fa-regular fa-star"></i>);
+        }
+    }
+    return starsRate;
+}
+
 const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,minPrice,minPriceOld}) => {
     return (
         <div className='trips__card'>
@@ -13,8 +28,11 @@ const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,mi
                 <h3 className='trips__title'>
                     {title}
                 </h3>
-                <div className='trips__rate-box'>
-                    <i className='trips__rate-icon'></i>
+                <div className='trips-rate'>
+                    <div className='trips-rate__box'>
+                        {generateStars(5,rate)}
+                    </div>
+                    
                     {rate}
                 </div>
                 <div className='trips__price'>
