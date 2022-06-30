@@ -30,7 +30,9 @@ function App() {
   if(loading)  
     return (
       <main className='main'>
-        Loading...
+        <div className='loader'>
+          <div className='loader__content'></div>
+        </div>
       </main>
     )
   else if(!trips.length) 
