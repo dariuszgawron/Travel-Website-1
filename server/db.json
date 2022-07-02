@@ -32,17 +32,6 @@
       "currency": "€",
       "minPrice": 1245,
       "minPriceOld": 1465
-    },
-    {
-      "id": 4,
-      "title": "Italian Espresso",
-      "imageSrc": "https://cdn.pixabay.com/photo/2022/06/18/21/40/strasbourg-7270721_960_720.jpg",
-      "numberOfCountries": 1,
-      "numberOfDays": 10,
-      "rate": 4.5,
-      "currency": "€",
-      "minPrice": 1245,
-      "minPriceOld": 1465
     }
   ]
 }

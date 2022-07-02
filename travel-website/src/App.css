@@ -5,7 +5,6 @@
 :root {
   /* FONTS */
   --font-family: 'Roboto',sans-serif;
-  /* --font-size-1: 2rem; */
   --font-size-1: 1.5rem;
   --font-size-2: 1.25rem;
   --font-size-3: 1.12rem;
@@ -17,6 +16,11 @@
   --font-weight-bold: 900;
   --font-weight-semibold: 700;
   --font-weight-medium: 500;
+
+  /* COLORS */
+  --text-color-dark: rgb(0, 0, 0);
+  --text-color-normal: rgb(144, 144, 144);
+  --text-color-light: rgb(220, 220, 220);
 }
 
 /* GENERAL STYLES & RESETS */
@@ -42,7 +46,7 @@ img {
 
 /* COMMON CSS CLASSES */
 .container {
-  max-width: 1024px;
+  max-width: 1200px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -63,10 +67,6 @@ img {
 }
 
 /* TRIPS */
-.trips {
-
-}
-
 .trips__container {
   display: grid;
   grid-gap: .8rem;
@@ -109,7 +109,7 @@ img {
 
 .trips__subtitle {
   font-size: var(--font-size-7);
-  color: rgb(144, 144, 144);
+  color: var(--text-color-normal);
 }
 
 .trips__title {
@@ -132,7 +132,7 @@ img {
 
 .trips-rate__icon {
   font-size: var(--font-size-5);
-  color: rgb(220, 220, 220);
+  color: var(--text-color-light);
 }
 
 .trips-rate__icon-fill {
@@ -155,8 +155,8 @@ img {
 }
 
 .trips__price-old {
-  color: rgb(144, 144, 144);
-  font-weight: bold;
+  color: var(--text-color-normal);
+  font-weight: var(--font-weight-bold);
   text-decoration: line-through;
 }
 
@@ -178,10 +178,8 @@ img {
   animation: spin 1s ease-in-out infinite;
 }
 
-
 /* MEDIA QUERIES */
 /* Small screen */
-
 
 /* Medium screen */
 @media screen and (min-width: 575px) {
@@ -205,6 +203,7 @@ img {
 }
 
 /* Large screen */
+
 
 /* ANIMATIONS */
 @keyframes spin {
