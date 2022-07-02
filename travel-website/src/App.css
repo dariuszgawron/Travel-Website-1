@@ -116,6 +116,9 @@ img {
   margin-bottom: .7rem;
   font-size: var(--font-size-4);
   font-weight: var(--font-weight-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .trips-rate {
@@ -196,7 +199,7 @@ img {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1220px) {
   .container {
     margin: 0 auto;
   }
