@@ -17,7 +17,7 @@ const generateStars = (maxRate,rate) => {
 
 const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,minPrice,minPriceOld}) => {
     return (
-        <div className='trips__card'>
+        <div key={"trip"+id} className='trips__card'>
             <div className='trips__cover'>
                 <img className='trips__img' src={imageSrc} alt={title}/>
             </div>
@@ -37,7 +37,7 @@ const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,mi
                     </span>
                 </div>
                 <div className='trips__price'>
-                    <span className='trips__price-base'>From {currency}{minPrice.toLocaleString('en-US')}</span>&bull;
+                    <span className='trips__price-base'>From {currency}{minPrice.toLocaleString('en-US')}</span>
                     <span className='trips__price-old'>{currency}{minPriceOld.toLocaleString('en-US')}</span>
                 </div>
             </div>

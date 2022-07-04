@@ -157,6 +157,11 @@ img {
   font-weight: var(--font-weight-bold);
 }
 
+.trips__price-base::after {
+  margin-left: .3rem;
+  content: "\2022";
+}
+
 .trips__price-old {
   color: var(--text-color-normal);
   font-weight: var(--font-weight-bold);
