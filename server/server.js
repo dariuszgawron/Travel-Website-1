@@ -2,7 +2,7 @@ const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
 const fs = require('fs');
-const cors = require('cors')
+const cors = require('cors');
 
 const port = process.env.PORT || 5000;
 const app = express();
@@ -14,12 +14,17 @@ const io = socketIO(server, {
       methods: ["GET", "POST"]
     }
 });
-const fileWatcher = fs.watch('./db.json');
-const tripsData = require('./db.json');
+const fileName = './db.json';
+const fileWatcher = fs.watch(fileName);
 
 io.on('connection', socket => {
     const onFileChange = () => {
-        socket.emit('trips',require('./db.json'));
+        fs.readFile(fileName, (err,data) => {
+            if(err) throw err;
+            if(data.length>0) {
+                socket.emit('trips',JSON.parse(data));
+            }
+        })
     }
 
     // Add listener
@@ -33,7 +38,7 @@ io.on('connection', socket => {
 
 app.use(cors());
 app.get("/trips", (req,res) => {
-    res.json({'trips': tripsData});
+    res.json({'trips': JSON.parse(fs.readFileSync(fileName))});
 })
 
 server.listen(port, () => {
