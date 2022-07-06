@@ -3,7 +3,7 @@ import TripRating from './TripRating';
 
 const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,minPrice,minPriceOld}) => {
     return (
-        <div key={"trip"+id} className='trips__card'>
+        <div className='trips__card'>
             <div className='trips__cover'>
                 <img className='trips__img' src={imageSrc} alt={title}/>
             </div>
@@ -14,7 +14,7 @@ const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,mi
                 <h3 className='trips__title'>
                     {title}
                 </h3>
-                <TripRating maxRate={5} averageRate={rate} />
+                <TripRating key={['trip',id,'rating'].join('_')} tripId={id} maxRate={5} averageRate={rate} />
                 <div className='trips__price'>
                     <span className='trips__price-base'>From {currency}{minPrice.toLocaleString('en-US')}</span>
                     <span className='trips__price-old'>{currency}{minPriceOld.toLocaleString('en-US')}</span>
