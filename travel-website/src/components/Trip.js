@@ -9,7 +9,7 @@ const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,mi
             </div>
             <div className='trips__data'>
                 <h4 className='trips__subtitle'>
-                    {numberOfCountries} Countries, {numberOfDays} Days
+                    {numberOfCountries} {numberOfCountries!==1 ? 'Countries' : 'Country'}, {numberOfDays} {numberOfDays!==1 ? 'Days' : 'Day'}
                 </h4>
                 <h3 className='trips__title'>
                     {title}
