@@ -197,6 +197,7 @@ img {
   }
 }
 
+/* Large screen */
 @media screen and (min-width: 992px) {
   .trips__container {
     grid-template-columns: repeat(3,1fr);
@@ -209,9 +210,6 @@ img {
     margin: 0 auto;
   }
 }
-
-/* Large screen */
-
 
 /* ANIMATIONS */
 @keyframes spin {

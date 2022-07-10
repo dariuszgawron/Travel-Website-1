@@ -16,12 +16,12 @@ const Trip = ({id,title,imageSrc,numberOfCountries,numberOfDays,rate,currency,mi
                 </h3>
                 <TripRating key={['trip',id,'rating'].join('_')} tripId={id} maxRate={5} averageRate={rate} />
                 <div className='trips__price'>
-                    <span className='trips__price-base'>From {currency}{minPrice.toLocaleString('en-US')}</span>
-                    <span className='trips__price-old'>{currency}{minPriceOld.toLocaleString('en-US')}</span>
+                    <span className='trips__price-base'>From {currency}{minPrice?.toLocaleString('en-US')}</span>
+                    <span className='trips__price-old'>Price {currency}{minPriceOld?.toLocaleString('en-US')}</span>
                 </div>
             </div>
         </div>
     )
 };
 
-export default Trip
+export default Trip;

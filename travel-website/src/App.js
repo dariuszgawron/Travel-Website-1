@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {io} from 'socket.io-client';
-import Trips from './Trips';
+import Trips from './components/Trips';
 import './App.css';
 
 const apiUrl = 'http://localhost:5000';
